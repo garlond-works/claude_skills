@@ -1,0 +1,99 @@
+{
+  "comment": "GarlondWorks ブランドトークン — 全形式共通",
+  "themes": {
+    "garlondworks": {
+      "primary":     "#3D3939",
+      "accent":      "#00D5D5",
+      "accentDark":  "#009999",
+      "white":       "#FFFFFF",
+      "bg":          "#F5F8F8",
+      "gray1":       "#6B7280",
+      "gray2":       "#AAAAAA",
+      "text":        "#1F2937"
+    },
+    "construction": {
+      "primary":     "#1E3A5F",
+      "primaryDark": "#0A2540",
+      "primaryLight":"#4A7AB5",
+      "accent":      "#00D5D5",
+      "accentDark":  "#009999",
+      "highlight":   "#D97706",
+      "white":       "#FFFFFF",
+      "bg":          "#F5F8F8"
+    },
+    "accounting": {
+      "primary":     "#1B4332",
+      "accent":      "#00D5D5",
+      "accentDark":  "#009999",
+      "highlight":   "#F59E0B",
+      "white":       "#FFFFFF",
+      "bg":          "#F5F8F8"
+    },
+    "manufacturing": {
+      "primary":     "#312E81",
+      "accent":      "#00D5D5",
+      "accentDark":  "#009999",
+      "highlight":   "#E05252",
+      "white":       "#FFFFFF",
+      "bg":          "#F5F8F8"
+    },
+    "healthcare": {
+      "primary":     "#065A82",
+      "accent":      "#00D5D5",
+      "accentDark":  "#009999",
+      "highlight":   "#059669",
+      "white":       "#FFFFFF",
+      "bg":          "#F5F8F8"
+    },
+    "generic": {
+      "primary":     "#1F2937",
+      "accent":      "#00D5D5",
+      "accentDark":  "#009999",
+      "highlight":   "#6366F1",
+      "white":       "#FFFFFF",
+      "bg":          "#F5F8F8"
+    }
+  },
+  "typography": {
+    "pptx": {
+      "heading1":    { "face": "Arial Black", "size": 40, "note": "タイトルスライド" },
+      "heading2":    { "face": "Arial Black", "size": 20, "note": "セクション見出し" },
+      "body":        { "face": "Calibri",     "size": 12 },
+      "caption":     { "face": "Calibri",     "size": 10 },
+      "japanese_pptx_only": "Meiryo UI",
+      "japanese_libreoffice": "Calibri（文字化け防止）"
+    },
+    "html": {
+      "fontFamily":  "'Noto Sans JP', 'Hiragino Sans', sans-serif",
+      "heading1":    { "size": "1.5rem", "weight": 700 },
+      "heading2":    { "size": "1rem",   "weight": 700 },
+      "body":        { "size": "0.9rem", "lineHeight": 1.7 },
+      "caption":     { "size": "0.75rem" }
+    },
+    "word": {
+      "heading1":    { "face": "游ゴシック", "size": 14, "bold": true },
+      "heading2":    { "face": "游ゴシック", "size": 11, "bold": true },
+      "body":        { "face": "游ゴシック", "size": 10.5 },
+      "caption":     { "face": "游ゴシック", "size": 9.5 }
+    }
+  },
+  "spacing": {
+    "pptx": {
+      "marginMin":   "0.4inch",
+      "marginRec":   "0.5inch",
+      "cardGap":     "0.1inch",
+      "titleBarH":   "0.68inch"
+    },
+    "html": {
+      "sectionMargin": "0 2rem",
+      "cardPadding":   "0.8rem 1rem",
+      "cardGap":       "0.6rem"
+    },
+    "word": {
+      "pageMarginTB": "2.0cm",
+      "pageMarginLR": "2.5cm",
+      "paragraphAfter": "4pt",
+      "lineSpacing":  "16pt"
+    }
+  }
+}
