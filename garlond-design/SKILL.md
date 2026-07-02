@@ -9,6 +9,7 @@ description: |
     - PPTX → garlond-pptx（anthropic-skills）
   「どの形式がいいか」「形式を決めてほしい」「複数形式で作って」など
   形式選択が必要なときにのみ使うこと。
+  Keywords: output format, document format, which format, HTML vs Word vs PPTX, design system
 ---
 
 # GarlondWorks デザインシステム ルーター
@@ -35,3 +36,16 @@ description: |
 | 製造・技術 | #312E81 | #00D5D5 |
 | ヘルスケア | #065A82 | #00D5D5 |
 | 汎用ビジネス | #1F2937 | #00D5D5 |
+
+---
+
+## ⚠️ Gotchas（やりがちな失敗）
+
+**形式が決まっているのにこのスキルを使う**
+形式が明示されていたら専用スキルに直接行く。このスキルは「形式を迷っているとき」専用。
+
+**「なんとなくPPTX」にする**
+印刷・稟議・マニュアルはWordの方が適切な場合が多い。判断軸の表で確認してから決める。
+
+**ブランドカラーを案件種別に合わせず全部同じにする**
+GarlondWorksカラー（#3D3939）はGarlondWorks自社案件専用。クライアント向けは案件種別に合わせて切り替える。

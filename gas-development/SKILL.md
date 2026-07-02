@@ -1,6 +1,14 @@
 ---
 name: GAS開発
-description: Google Apps Script（GAS）でスクリプトを作成・修正するときに使う。スプレッドシート自動化・Gmail操作・Google Drive連携・freee連携・定期実行など。「GASで作って」「スプレッドシートを自動化して」「Googleフォームと連携して」などの指示で起動する。
+description: |
+  Google Apps Script（GAS）でスクリプトを作成・修正するときに使う。
+  以下のいずれかで起動する：
+  - 「GASで作って」「スプレッドシートを自動化して」
+  - 「Googleフォームと連携して」「Gmailで自動送信して」
+  - 「定期実行したい」「トリガー設定して」
+  - Google Workspace（スプレッドシート・Gmail・Drive・フォーム・カレンダー）の自動化全般
+  - freee連携・外部API連携をGAS経由でやりたいとき
+  Keywords: GAS, Google Apps Script, automation, spreadsheet, Gmail, Drive, trigger, script
 ---
 
 # GAS開発スキル
@@ -63,6 +71,27 @@ const response = UrlFetchApp.fetch(url, {
 - **H社**: 日報集計・LINE WORKS連携・グリーンサイトCSV処理・GMOサイン後処理
 - **KT税理士法人**: freee連携・CSV仕訳修正・クライアント別レポート自動生成
 - **SDT株式会社**: 指示があるまで詳細を聞かない
+
+---
+
+## ⚠️ Gotchas（やりがちな失敗）
+
+**1行ずつ読み書きする**
+`getValue()` / `setValue()` のループは極端に遅い。必ず `getValues()` / `setValues()` でまとめて処理する。
+
+**6分制限を超える処理**
+GASの実行時間上限は6分。大量データ処理はチャンクに分割し、続きをプロパティサービスに保存してトリガーで再起動する設計にする。
+
+**APIキー・トークンをコードに直書きする**
+スクリプトプロパティ（`PropertiesService.getScriptProperties()`）に保存する。コードに直書きすると共有時に漏洩する。
+
+**`onEdit` が無限ループする**
+`onEdit` の中でセルを書き込むと再度 `onEdit` が発火する場合がある。書き込み先のシート・セルを限定するか、フラグで制御する。
+
+**スコープを広げすぎる**
+デプロイ時の権限スコープは最小限にする。`spreadsheets` だけで済むのに `drive` を要求しない。
+
+---
 
 ## 注意事項
 - GASの実行時間制限は6分（重い処理は分割する）

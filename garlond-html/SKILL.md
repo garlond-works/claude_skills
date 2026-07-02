@@ -2,11 +2,14 @@
 name: garlond-html
 description: |
   GarlondWorks が作成する HTML レポート・ダッシュボードのデザインスキル。
-  「HTMLで出力して」「レポートにして」「ダッシュボードにして」「操作できる形で」
-  「フィルタ付きで」「ブラウザで見られるように」「クライアント向けに整理して」
-  など、HTML形式の出力が求められるときに使う。
+  以下のいずれかで起動する：
+  - 「HTMLで出力して」「レポートにして」「ダッシュボードにして」
+  - 「操作できる形で」「フィルタ付きで」「ブラウザで見られるように」
+  - 「クライアント向けに整理して」「URLで共有したい」
+  - 複雑な比較・進捗・レビュー結果をインタラクティブに見せたいとき
   単一ファイルHTML生成。Noto Sans JP・GarlondWorksブランドカラーで統一。
   フィルタ・折り畳み・ステータス表示など操作可能なインターフェースに仕上げる。
+  Keywords: HTML report, dashboard, interactive, filter, browser, single file, Noto Sans
 ---
 
 # GarlondWorks HTML スキル
@@ -45,3 +48,19 @@ description: |
 - 単一ファイルで開けるか（外部CDN依存がある場合はオフライン注意）
 - フィルタ・折り畳みが動作するか
 - 印刷用CSS（`@media print`）が必要な場合は追加されているか
+
+---
+
+## ⚠️ Gotchas（やりがちな失敗）
+
+**外部CDNを使う**
+単一ファイル原則に反する。Tailwind・Font Awesome等のCDNは使わない。CSSはすべて `<style>` タグ内にインライン化する。Noto Sans JPはGoogle Fontsから読み込むが、オフライン利用が必要な場合はシステムフォントにフォールバックする旨を伝える。
+
+**モバイル対応を後回しにする**
+`<meta name="viewport">` と `@media` クエリは最初から入れる。
+
+**JavaScriptをCDNから読み込む**
+jQueryやlodash等の外部ライブラリは使わない。バニラJSで書く。
+
+**`designer-elie` スキルとの使い分け**
+このスキルはGarlondWorksブランドのHTMLに使う。クライアントのサイト風・別スタイルで作りたい場合は `designer-elie` を先に起動してデザイントークンを決める。

@@ -1,10 +1,13 @@
 ---
 name: PDFドキュメント生成
-description: >
+description: |
   ReportLab（Python）で新規PDFを生成するときに使う。
-  「PDFで作って」「PDF出力して」「PDFレポート作って」などの指示で起動する。
-  ※ 既存PDFを読む・テキスト抽出・ページ操作は anthropic-skills:pdf を使うこと。
-  ※ PPTX生成は garlond-pptx、Word生成は garlond-word を使うこと。
+  以下のいずれかで起動する：
+  - 「PDFで作って」「PDF出力して」「PDFレポート作って」
+  - 「証明書にして」「帳票を作って」「印刷・配布・署名前提の文書にして」
+  ※ 既存PDFを読む・テキスト抽出・ページ操作 → anthropic-skills:pdf を使うこと
+  ※ PPTX生成 → garlond-pptx、Word生成 → garlond-word を使うこと
+  Keywords: PDF, generate, ReportLab, certificate, form, print, document
 ---
 
 # PDFドキュメント生成スキル（新規作成専用）
@@ -49,6 +52,24 @@ description: >
 ## 参照スキル
 
 このスキル起動後、作業前に `/mnt/skills/public/pdf/SKILL.md` を必ず読む。
+
+---
+
+## ⚠️ Gotchas（やりがちな失敗）
+
+**はみ出しチェックを省く**
+ReportLabはテーブルが用紙幅を超えても自動折り返しせずはみ出す。列幅の合計が必ずCONTENT_W（174mm）以内に収まっているか確認してから納品する。
+
+**見出しを単独でstory.appendする**
+見出し直後に改ページが入ると見出しだけが前ページに残る（孤立見出し）。`KeepTogether` でセクション全体をまとめるか、whitecard内に一体化する。
+
+**フォントを指定しない**
+ReportLabのデフォルトフォントは日本語非対応。必ずIPA Gothicを登録してから使う。
+
+**HTMLやWordで代替できるものにReportLabを使う**
+ReportLabは設定が複雑。帳票・証明書以外はgarlond-html / garlond-wordで作る方が速い。
+
+---
 
 ## 注意事項
 - クライアント社名はイニシャル表記（H社・KT・SDT）
